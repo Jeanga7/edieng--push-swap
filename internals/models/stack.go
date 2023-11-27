@@ -22,8 +22,11 @@ func (s *Stack) Pop() (item interface{}) {
 	return
 }
 
+// The `Unshift` function is used to remove and return the first item from the stack
 func (s *Stack) Unshift() (item interface{}) {
-	item, *s = (*s)[0], (*s)[1:]
+	if s.Size() >= 1 {
+		item, *s = (*s)[0], (*s)[1:]
+	}
 	return
 }
 

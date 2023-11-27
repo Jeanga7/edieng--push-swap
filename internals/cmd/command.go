@@ -5,8 +5,10 @@ import (
 )
 
 func Pa(b *models.Stack, a *models.Stack) {
-	x := b.Unshift()
-	a.Shift(x)
+	if b.Size() > 0 {
+		x := b.Unshift()
+		a.Shift(x)
+	}
 	// return *a, *b
 }
 func Pb(a *models.Stack, b *models.Stack) {

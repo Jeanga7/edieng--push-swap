@@ -20,17 +20,17 @@ Comme dit précédemment, nous aurons à notre disposition deux piles . Notre ob
 
 Voici les instructions que vous pouvez utiliser pour trier la pile :
 
-- pa poussez le premier élément supérieur de la pile b se mettre en pile a
-- pb poussez le premier élément supérieur de la pile a se mettre en pile b
-- sa permuter les 2 premiers éléments de la pile a
-- sb permuter les 2 premiers éléments de la pile b
-- ss exécuter sa et sb
-- ra tourner la pile a (décalage de tous les éléments de la pile a par 1, le premier élément devient le dernier)
-- rb tourner la pile b
-- rr exécuter ra et rb
-- rra rotation inverse a ( déplacer tous les éléments de la pile a par 1, le dernier élément devient le premier )
-- rrb rotation inverse b
-- rrr exécuter rra et rrb
+- `pa` poussez le premier élément supérieur de la pile b se mettre en pile a
+- `pb` poussez le premier élément supérieur de la pile a se mettre en pile b
+- `sa` permuter les 2 premiers éléments de la pile a
+- `sb` permuter les 2 premiers éléments de la pile b
+- `ss` exécuter `sa` et `sb`
+- `ra` tourner la pile a (décalage de tous les éléments de la pile a par 1, le premier élément devient le dernier)
+- `rb` tourner la pile b
+- `rr` exécuter `ra` et `rb`
+- `rra` rotation inverse a ( déplacer tous les éléments de la pile a par 1, le dernier élément devient le premier )
+- `rrb` rotation inverse b
+- `rrr` exécuter `rra` et `rrb`
 
 
 ## Auteurs
@@ -49,16 +49,20 @@ Si vous voulez run l'audit automatiquement
 
 #### Build
 ```shell
-   git clone https://learn.zone01dakar.sn/git/edieng/push-swap.git
-   cd push-swap
-   ./script/build.sh
-   cd script
-   bash audit.sh
+git clone https://learn.zone01dakar.sn/git/edieng/push-swap.git
+```
+
+```shell
+ cd push-swap
 ```
 ```shell
-   
-   cd script
-   bash audit.sh
+./script/build.sh
+```
+```shell
+cd script
+```
+```shell
+./audit.sh
 ```
 ### Manuel
 1. Clonez ce dépôt sur votre machine :
@@ -87,17 +91,24 @@ Si vous voulez run l'audit automatiquement
    
 ```
 ├── push-swap/
-│   ├── push-swap/
-│   │   ├──
-|   |   ├──
-│   │   ├──
-|   |   ├── 
 │   ├── checker/
-│   │   ├──
-|   |   ├──
-|   |   ├──
-|   |   ├──
-|   ├──main.go
+│   │   ├──Checker.go
+│   ├── Docs/
+│   ├── internals/
+│   │   ├──algorithm/
+│   │   ├──cmd/
+│   │   ├──models/
+│   │   ├──utils/
+│   ├── push-swap/
+│   │   ├──main.go
+|   ├──script
+|   |   ├──build/
+|   |   ├──audit.sh
+|   |   ├──build.sh
+|   |   ├──config.sh
+|   |   ├──install.sh
+|   |   ├──push.sh
+|   ├──m.gitignore
 |   ├──go.mod
 |   ├──README.md
 ├── - - - -
@@ -110,9 +121,10 @@ l'algorithme verifie d'abord la valadité des arguments ensuite pour optimiser l
 Si pile A est ordonnée il rammene tous les nombres étant sur pile b
 
 **fonctionnement du Checker :**
-Le checker verifie des instructions sur l'entrée standard, chaque instruction sera suivie par \n. Une fois que toutes les instructions ont été lues, checker les exécutera sur la pile reçue en argument.<br>
-Si après avoir exécuté ces instructions, empilez a est en fait triée et b est vide, alors le vérificateur doit afficher "OK" suivi d'un \n sur la sortie standard. Dans tous les autres cas, le vérificateur doit afficher "KO" suivi d'un \n sur la sortie standard.<br>
-En cas d'erreur, vous devez afficher Erreur suivie d'une \n sur l'erreur standard. Les erreurs incluent par exemple: certains arguments ne sont pas des entiers, il y a des doublons, une instruction n'existe pas et/ou est mal formatée.<br>
+
+Le checker verifie des instructions sur l'entrée standard, chaque instruction sera suivie par `\n`. Une fois que toutes les instructions ont été lues, checker les exécutera sur la pile reçue en argument.<br>
+Si après avoir exécuté ces instructions, empilez a est en fait triée et b est vide, alors le vérificateur doit afficher `"OK"` suivi d'un `\n` sur la sortie standard. Dans tous les autres cas, le vérificateur doit afficher `"KO"` suivi d'un `\n` sur la sortie standard.<br>
+En cas d'erreur, vous devez afficher Erreur suivie d'une `\n` sur l'erreur standard. Les erreurs incluent par exemple: certains arguments ne sont pas des entiers, il y a des doublons, une instruction n'existe pas et/ou est mal formatée.<br>
 Dans le cas où il n'y a pas d'arguments, le programme n'affiche rien.
 ## Contributions
 
