@@ -27,7 +27,6 @@ echo "Try to run ./push-swap '1 2 2 3' "
 Continue
 echo "Try to run ./push-swap '<5 random numbers>' with 5 random numbers instead of the tag."
 read -t 10 -p "> " input_numbers
-# echo "Vous avez entré : $input_numbers"
 ./build/push-swap "$input_numbers"
 Continue
 echo "Try to run ./push-swap '<5 random numbers>' with 5 different random numbers instead of the tag."
