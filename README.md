@@ -44,7 +44,23 @@ Voici les instructions que vous pouvez utiliser pour trier la pile :
 Avant d'utiliser ce programme, assurez-vous d'avoir Go installé sur votre système. Pour l'installer, suivez les instructions sur le site officiel de Go : [https://golang.org/doc/install](https://golang.org/doc/install).
 
 Une fois Go installé, suivez ces étapes pour installer ce programme :
+### Automatique
+Si vous voulez run l'audit automatiquement
 
+#### Build
+```shell
+   git clone https://learn.zone01dakar.sn/git/edieng/push-swap.git
+   cd push-swap
+   ./script/build.sh
+   cd script
+   bash audit.sh
+```
+```shell
+   
+   cd script
+   bash audit.sh
+```
+### Manuel
 1. Clonez ce dépôt sur votre machine :
 
    ```shell
