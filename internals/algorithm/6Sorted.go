@@ -13,20 +13,20 @@ func Less6Sorted(PileA *models.Stack, PileB *models.Stack, minA int, maxA int, l
 			// maxA est au debut et un des low à la 2iem pos
 			if (n == l && i == 1) && maxA == 0 {
 				cmd.Ra(PileA)
-				fmt.Println("Ra")
+				fmt.Println("ra")
 				models.Count++
 				return
 			} else if minA == 1 && maxA != 0 {
 				// minA est à la 2iem pos
 				cmd.Sa(PileA)
-				fmt.Println("Sa")
+				fmt.Println("sa")
 
 				models.Count++
 				return
-			} else if (n == l && i == 0) {
+			} else if n == l && i == 0 {
 				// low à la pos[0]
 				cmd.Pb(PileA, PileB)
-				fmt.Println("Pb")
+				fmt.Println("pb")
 				models.Count++
 				return
 			}
@@ -34,28 +34,28 @@ func Less6Sorted(PileA *models.Stack, PileB *models.Stack, minA int, maxA int, l
 		// minA est à la 2iem pos et maxA à la pos[0]
 		if maxA == 0 && minA == 1 {
 			cmd.Ra(PileA)
-			fmt.Println("Ra")
+			fmt.Println("ra")
 			models.Count++
 			return
 		}
 		// minA est proche du bas
 		if minA == len(*PileA)-1 || (maxA == 0 && minA == len(*PileA)-1) || (maxA == 1 && (minA == 2 || minA == len(*PileA)-1)) {
 			cmd.Rra(PileA)
-			fmt.Println("Rra")
+			fmt.Println("rra")
 			models.Count++
 			return
 		}
 		// minA est à la 2iem pos et maxA à la pos[0]
 		if minA == 2 && maxA == len(*PileA)-1 {
 			cmd.Sa(PileA)
-			fmt.Println("Sa")
+			fmt.Println("sa")
 			models.Count++
 			return
 		}
 		// maxA == 0 et minA != de la dernier pos
 		if maxA == 0 && minA != len(*PileA)-1 {
 			cmd.Ra(PileA)
-			fmt.Println("Ra")
+			fmt.Println("ra")
 			models.Count++
 			return
 		}
@@ -64,18 +64,18 @@ func Less6Sorted(PileA *models.Stack, PileB *models.Stack, minA int, maxA int, l
 			if (n == l && i == 0) && minA != 1 {
 				// low à la pos[0]
 				cmd.Pb(PileA, PileB)
-				fmt.Println("Pb")
+				fmt.Println("pb")
 				models.Count++
 				return
 			} else if ((n == l && i == 1) && (maxA != 0 || minA == 0)) || ((n == l && i == 0) && minA == 1) {
 				// low à la deuxiem pos
 				cmd.Sa(PileA)
-				fmt.Println("Sa")
+				fmt.Println("sa")
 				models.Count++
 				return
 			} else if n == l && i == len(*PileA)-1 {
 				cmd.Rra(PileA)
-				fmt.Println("Rra")
+				fmt.Println("rra")
 				models.Count++
 				return
 			}
@@ -83,25 +83,25 @@ func Less6Sorted(PileA *models.Stack, PileB *models.Stack, minA int, maxA int, l
 		// min est proche du bas
 		if minA >= pivot {
 			cmd.Rra(PileA)
-			fmt.Println("Rra")
+			fmt.Println("rra")
 			models.Count++
 			return
 		}
 		if minA < pivot {
 			cmd.Ra(PileA)
-			fmt.Println("Ra")
+			fmt.Println("ra")
 			models.Count++
 			return
 		}
 		if maxA == 0 {
 			cmd.Ra(PileA)
-			fmt.Println("Ra")
+			fmt.Println("ra")
 			models.Count++
 			return
 		}
 		if minA == 1 && maxA != 0 {
 			cmd.Sa(PileA)
-			fmt.Println("Sa")
+			fmt.Println("sa")
 			models.Count++
 			return
 		}

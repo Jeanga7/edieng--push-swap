@@ -6,7 +6,6 @@ import (
 	"push/internals/algorithm"
 	"push/internals/cmd"
 	"push/internals/models"
-	"runtime"
 	"sort"
 	"strings"
 )
@@ -15,17 +14,17 @@ type Positions struct {
 	Pos []int
 }
 
-func Throw(message string) {
-	fmt.Printf("\033[38;2;255;0;0m%v\033[0m\n", message)
-	os.Exit(1)
-}
+// func Throw(message string) {
+// 	fmt.Printf("\033[38;2;255;0;0m%v\033[0m\n", message)
+// 	os.Exit(1)
+// }
 
-func Log() string {
-	pc, _, line, _ := runtime.Caller(1)
-	callinFunc := runtime.FuncForPC(pc).Name()
-	errMessage := fmt.Sprintf(" %v at line %v", callinFunc, line)
-	return errMessage
-}
+// func Log() string {
+// 	pc, _, line, _ := runtime.Caller(1)
+// 	callinFunc := runtime.FuncForPC(pc).Name()
+// 	errMessage := fmt.Sprintf(" %v at line %v", callinFunc, line)
+// 	return errMessage
+// }
 
 // à supprimer je pense (edieng)
 func Check_lower(a *models.Stack) {
@@ -63,7 +62,6 @@ func Check_low(a []int) []int {
 				low = append(low, ch)
 			}
 		}
-		fmt.Println(low)
 	}
 	if taille%2 == 1 {
 		for i, ch := range a {
@@ -71,7 +69,6 @@ func Check_low(a []int) []int {
 				low = append(low, ch)
 			}
 		}
-		fmt.Println(low)
 	}
 	return low
 }
@@ -204,7 +201,7 @@ func Traitement(A_number models.Stack, B_number models.Stack, en []int) {
 func CheckDuplication(nombre int, pile models.Stack) error {
 	for _, n := range pile {
 		if n == nombre {
-			return fmt.Errorf("error : Le nombre %v est déjà présent dans la pile.", nombre)
+			return fmt.Errorf("error : Le nombre %v est déjà présent dans la pile", nombre)
 		}
 	}
 	return nil

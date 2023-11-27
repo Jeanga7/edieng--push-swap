@@ -37,5 +37,5 @@ func main() {
 
 		utils.Traitement(A_number, B_number, en)
 
-	} 
+	}
 }

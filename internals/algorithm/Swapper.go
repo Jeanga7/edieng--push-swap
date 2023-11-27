@@ -144,17 +144,11 @@ outerloop:
 				LesstenSorted(PileA, PileB, minA, maxA, lows, pivot)
 				continue outerloop
 			}
-			// //_________________________________
-			// //				  traitement à 100
-			if PileA.Size() <= 100 {
-				fmt.Println("the100")
-				Less100Sorted(PileA, PileB, lows, pivot)
-			}
 		}
 	}
 	if IsSorted(PileA) && len(*PileB) != 0 {
 		cmd.Pa(PileB, PileA)
-		fmt.Println("Pa")
+		fmt.Println("pa")
 		models.Count++
 		Swapper(PileA, PileB, lows)
 	}

@@ -11,7 +11,7 @@ func LesstenSorted(PileA *models.Stack, PileB *models.Stack, minA int, maxA int,
 	for i, n := range *PileA {
 		if minA == 0 {
 			cmd.Pb(PileA, PileB)
-			fmt.Println("Pb")
+			fmt.Println("pb")
 			models.Count++
 			return
 		}
@@ -19,33 +19,32 @@ func LesstenSorted(PileA *models.Stack, PileB *models.Stack, minA int, maxA int,
 			if (n == l && i == 0) && minA != 1 {
 				// low à la pos[0]
 				cmd.Pb(PileA, PileB)
-				fmt.Println("Pb")
+				fmt.Println("pb")
 				models.Count++
 				return
 			}
 		}
 		if minA == 1 && maxA != 0 {
 			cmd.Sa(PileA)
-			fmt.Println("Sa")
+			fmt.Println("sa")
 			models.Count++
 			return
 		}
 		if minA >= pivot {
 			cmd.Rra(PileA)
-			fmt.Println("Rra")
+			fmt.Println("rra")
 			models.Count++
 			return
 		}
 		if maxA == 0 && minA != len(*PileA)-1 {
 			cmd.Ra(PileA)
-			fmt.Println("test")
-			fmt.Println("Ra")
+			fmt.Println("ra")
 			models.Count++
 			return
 		}
 		if minA < pivot {
 			cmd.Ra(PileA)
-			fmt.Println("Ra")
+			fmt.Println("ra")
 			models.Count++
 			return
 		}

@@ -31,14 +31,14 @@ func main() {
 		}
 
 		entier := strings.Split(arg, " ")
-		var en []int
+		// var en []int
 		for _, v := range entier {
 			n, err := strconv.Atoi(string(v))
 			if err != nil {
 				fmt.Println("Error")
 				return
 			}
-			en = append(en, n)
+			// en = append(en, n)
 			A_number = append(A_number, n)
 		}
 		var func_todo []string
