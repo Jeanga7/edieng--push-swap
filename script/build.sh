@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir script/build
 cd Checker
 go build 
 mv Checker ../script/build
